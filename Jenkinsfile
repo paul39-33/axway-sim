@@ -4,8 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'file:///home/lizzie/axway-sim'
-            }
+                echo "Source already checked out by Jenkins teeeheee"           }
         }
 
         stage('YAML Validation') {

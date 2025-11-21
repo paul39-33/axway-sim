@@ -1,0 +1,10 @@
+apiVersion: v1
+name: transfer
+frontend:
+  basePath: /payment/v1/transfer
+backend:
+  host: 10.0.3.50
+  port: 8081
+policies:
+  - validateJwt
+  - routeToBackend

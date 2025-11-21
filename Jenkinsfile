@@ -29,7 +29,7 @@ pipeline {
             steps {
                 sh '''
                 echo "Updating KPS..."
-                echo "KPS updated with new config" >> /var/log/kps-update.log
+                echo "KPS updated with new config" >> /var/log/jenkins-logs/kps-update.log
                 '''
             }
         }
@@ -39,7 +39,7 @@ pipeline {
                 sh '''
                 mkdir -p /opt/axway/backend
                 cp Policies/Payment/v1/Transfer.yaml /opt/axway/backend/
-                echo "Backend API imported" >> /var/log/axway.log
+                echo "Backend API imported" >> /var/log/jenkins-logs/axway.log
                 '''
             }
         }
@@ -49,7 +49,7 @@ pipeline {
                 sh '''
                 mkdir -p /opt/axway/frontend
                 cp Policies/Payment/v1/Transfer.yaml /opt/axway/frontend/
-                echo "Frontend API published" >> /var/log/axway.log
+                echo "Frontend API published" >> /var/log/jenkins-logs/axway.log
                 '''
             }
         }

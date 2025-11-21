@@ -37,8 +37,8 @@ pipeline {
         stage('Import Backend API (Simulated)') {
             steps {
                 sh '''
-                mkdir -p /opt/axway/backend
-                cp Policies/Payment/v1/Transfer.yaml /opt/axway/backend/
+                mkdir -p backend
+                cp Policies/Payment/v1/Transfer.yaml backend/
                 echo "Backend API imported" >> /var/log/jenkins-logs/axway.log
                 '''
             }
@@ -47,8 +47,8 @@ pipeline {
         stage('Import Frontend API (Simulated)') {
             steps {
                 sh '''
-                mkdir -p /opt/axway/frontend
-                cp Policies/Payment/v1/Transfer.yaml /opt/axway/frontend/
+                mkdir -p frontend
+                cp Policies/Payment/v1/Transfer.yaml frontend/
                 echo "Frontend API published" >> /var/log/jenkins-logs/axway.log
                 '''
             }
